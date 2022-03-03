@@ -5,4 +5,8 @@
     <RootNamespace>Albert_Saves_The_Planets_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Planets\" />
+  </ItemGroup>
+
 </Project>
