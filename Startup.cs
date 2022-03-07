@@ -22,7 +22,13 @@ namespace Albert_Saves_The_Planets_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // These two were manually added to enable Session data
+            services.AddSession();
+            services.AddDistributedMemoryCache();
+
             services.AddControllersWithViews();
+            services.AddHttpContextAccessor();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +47,7 @@ namespace Albert_Saves_The_Planets_2
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
