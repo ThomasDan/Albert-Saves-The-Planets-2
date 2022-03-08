@@ -1,11 +1,10 @@
-﻿@model Albert_Saves_The_Planets_2.Models.LanguageModel
+﻿@model List<ContentTextModel>
 @using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor httpContextAccessor; 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Start!";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome @Model.Code</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@Model.First(t => t.Name.Equals("TestTitle")).Text</h1>
 </div>
