@@ -12,5 +12,10 @@ namespace Albert_Saves_The_Planets_2.Models
 
         public LanguageModel() { }
         public LanguageModel(string name, string code) { Name = name; Code = code; }
+
+        public string GetFileName()
+        {
+            return this.Code + ".png";
+        }
     }
 }

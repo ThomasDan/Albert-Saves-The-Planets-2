@@ -1,4 +1,4 @@
-﻿@model List<ContentTextModel>
+﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
 @using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor httpContextAccessor; 
 @{
@@ -6,5 +6,6 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">@Model.First(t => t.Name.Equals("TestTitle")).Text</h1>
+    <h1 class="display-4">@Model.Contents.First(t => t.Name.Equals("TestTitle")).Text</h1>
+    <p>@Model.Contents.First(t => t.Name.Equals("TestText")).Text</p>
 </div>

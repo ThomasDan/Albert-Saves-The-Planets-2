@@ -26,8 +26,7 @@ namespace Albert_Saves_The_Planets_2.Logic
         /// <returns></returns>
         internal LanguageModel GetApprovedLanguage(string sessionLanguage, bool sessionLanguageApproved, string browserPreferredLanguage)
         {
-            LanguageDBManager langDB = new LanguageDBManager(configuration);
-            List<LanguageModel> langs = langDB.GetAllLanguages();
+            List<LanguageModel> langs = this.GetLanguages();
             // Default supported language, English!
             LanguageModel language = langs.First(l => l.Code.Equals("en-UK")); // mo-KY
 
@@ -45,6 +44,12 @@ namespace Albert_Saves_The_Planets_2.Logic
             }
 
             return language;
+        }
+
+        internal List<LanguageModel> GetLanguages()
+        {
+            LanguageDBManager langDB = new LanguageDBManager(configuration);
+            return langDB.GetAllLanguages();
         }
 
         internal List<ContentTextModel> GetTranslationsForPage(string langCode, string pageName)

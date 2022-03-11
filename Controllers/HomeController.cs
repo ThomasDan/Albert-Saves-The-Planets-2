@@ -1,4 +1,5 @@
 ﻿using Albert_Saves_The_Planets_2.Models;
+using Albert_Saves_The_Planets_2.Models.ViewModels;
 using Albert_Saves_The_Planets_2.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -26,11 +27,14 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult Index()
         {
             LanguageModel lang = SetSiteLanguage();
-
             List<ContentTextModel> pCM = GetAllPageContent(lang.Code, "Index");
 
+            LanguageLogic ll = new LanguageLogic(configuration);
 
-            return View(pCM);
+
+            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            return View(contents);
         }
 
         private LanguageModel SetSiteLanguage()
@@ -64,6 +68,13 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult SelectLanguage(string language)
+        {
+            HttpContext.Session.SetString("Language", language);
+            HttpContext.Session.SetString("LanguageApproved", "true");
+            return RedirectToAction("Index");
         }
     }
 }
