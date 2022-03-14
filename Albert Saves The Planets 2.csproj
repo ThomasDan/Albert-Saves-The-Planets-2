@@ -5,4 +5,15 @@
     <RootNamespace>Albert_Saves_The_Planets_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Planets\" />
+    <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="wwwroot\assets\videos\" />
+    <Folder Include="wwwroot\assets\sounds\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
 </Project>

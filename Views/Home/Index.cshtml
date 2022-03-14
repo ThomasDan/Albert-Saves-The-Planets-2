@@ -1,8 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor httpContextAccessor; 
+@{
+    ViewData["Title"] = "Start!";
 }
 
 <div class="text-center">
-    <h1 class="display-4">BANANA!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@Model.Contents.First(t => t.Name.Equals("TestTitle")).Text</h1>
+    <p>@Model.Contents.First(t => t.Name.Equals("TestText")).Text</p>
 </div>
