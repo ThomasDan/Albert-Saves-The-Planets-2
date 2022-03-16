@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Albert_Saves_The_Planets_2.Models;
+using Albert_Saves_The_Planets_2.Models.ViewModels;
+using Albert_Saves_The_Planets_2.Logic;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
@@ -26,7 +29,15 @@ namespace Albert_Saves_The_Planets_2.Controllers
         }
         public IActionResult Earth()
         {
-            return View();
+            LanguageModel lang = SetSiteLanguage();
+            List<ContentTextModel> pCM = GetAllPageContent(lang.Code, "Index");
+
+            LanguageLogic ll = new LanguageLogic(configuration);
+
+
+            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            return View(contents);
         }
         public IActionResult Mars()
         {
