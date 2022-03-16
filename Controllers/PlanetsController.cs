@@ -25,6 +25,8 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
         internal LanguageModel AcquireLanguage()
         {
+            LanguageLogic ll = new LanguageLogic(configuration);
+
             LanguageModel language =
                 ll.GetApprovedLanguage(
                     sessLang,
