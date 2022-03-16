@@ -1,6 +1,5 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
@@ -39,9 +38,7 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Albert however has failed to completely defeat the flying spaghetti
-                monster, so be vigilant and if the situation arises, help Albert and
-                The Banana Republic again to continue to have heroes like Albert.
+                @Model.Contents.First(t => t.Name.Equals("OutroText")).Text
             </div>
         </div>
     </div>

@@ -3,11 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
     public class PlanetsController : Controller
     {
+        private readonly IConfiguration configuration;
+
+        public PlanetsController(IConfiguration config)
+        {
+            configuration = config;
+        }
+
         public static Dictionary<int, string> planetReaderDictionary = new Dictionary<int, string>
         {
             {0, ""},
@@ -20,9 +29,15 @@ namespace Albert_Saves_The_Planets_2.Controllers
             {7, ""},
             {8, ""}
         };
+
+        
         public IActionResult PreStory()
         {
-            return View();
+            LanguageLogic ll = new LanguageLogic(configuration);
+            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "PreStory");
+            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            return View(contents);
         }
         public IActionResult Earth()
         {
