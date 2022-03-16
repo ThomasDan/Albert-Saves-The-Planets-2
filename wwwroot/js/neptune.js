@@ -34,3 +34,5 @@ setTimeout(function() {
     $el5 = $('.facts:not(.active');
     $el5.addClass('active');
 }, 8000);
+
+console.log('Javascript is working');
