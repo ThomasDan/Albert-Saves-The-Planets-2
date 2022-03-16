@@ -14,12 +14,13 @@
     <header style="position: absolute; z-index: 10; top: 0px; left: 10px;">
         <nav>
             <a asp-area="" asp-controller="Home" asp-action="Index">ASTPII</a>
+            <a asp-area="" asp-controller="Planets" asp-action="Earth">ASTPII</a>
             @using (Html.BeginForm("SelectLanguage", "Home"))
             {
                 <div class="row">
                     @foreach (LanguageModel languageModel in Model.Languages)
                     {
-                        <div >
+                        <div>
                             @if (languageModel.Code.Equals(Context.Session.GetString("Language")))
                             {
                                 <button type="submit" disabled name="language" value="@languageModel.Code">
