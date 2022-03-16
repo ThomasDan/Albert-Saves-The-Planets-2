@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Planets\" />
     <Folder Include="wwwroot\assets\images\" />
     <Folder Include="wwwroot\assets\videos\" />
     <Folder Include="wwwroot\assets\sounds\" />

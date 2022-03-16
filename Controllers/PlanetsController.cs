@@ -8,7 +8,7 @@ namespace Albert_Saves_The_Planets_2.Controllers
 {
     public class PlanetsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult PreStory()
         {
             return View();
         }
