@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
+            <img src="jupiter.png" alt="Jupiter" class="img-thumbnail">
+        </div>
+        <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
+            <div class="magic">
+                <div id="spagettimonster">
+                    <img src="Albert.png" alt="Spagetti monster" id="imagesdilog">
+                </div>
+                <div id="txtone" class="text-center">Albert</div>
+            </div>
+            <div class="text-center mt-2 dialogtxttwo">My god this is a big planet, how am I going to move this?</div>
+            <br>
+            <div class="magictwo">
+                <div id="spagettimonster">
+                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                </div>
+                <div id="txttwo" class="text-center">Spaghetti monster</div>
+            </div>
+            <div class="text-center mt-2 dialogtxt">Better not touch it little monkey, I had the same issue too.</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">Jupiter was a tough one to work with, it's size shocked Albert but he managed to take the gas giant to it's place with a lot of effort and a few bananas for power.</div>
+        </div>
+        <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
+            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
+                Jupiter is our 5th stop, it’s the biggest of all the planets in the Solar system.
+                It’s weight doesn't really matter because the Sun will always be the heaviest. But compared to the other planets, it's very heavy.
+            </div>
+        </div>
+    </div>
+</div>
+<script src="jupiter.js"></script>
