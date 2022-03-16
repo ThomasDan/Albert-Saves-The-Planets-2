@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Albert_Saves_The_Planets_2.Logic;
 using Albert_Saves_The_Planets_2.Models;
 using Albert_Saves_The_Planets_2.Models.ViewModels;
-using Albert_Saves_The_Planets_2.Logic;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
@@ -23,21 +24,19 @@ namespace Albert_Saves_The_Planets_2.Controllers
             {7, ""},
             {8, ""}
         };
+
+        
         public IActionResult PreStory()
         {
-            return View();
-        }
-        public IActionResult Earth()
-        {
-            LanguageModel lang = SetSiteLanguage();
-            List<ContentTextModel> pCM = GetAllPageContent(lang.Code, "Index");
-
             LanguageLogic ll = new LanguageLogic(configuration);
-
-
+            List<ContentTextModel> pCM = GetAllPageContent(HttpContext.Session.GetString("Language"), "PreStory");
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
             return View(contents);
+        }
+        public IActionResult Earth()
+        {
+            return View();
         }
         public IActionResult Mars()
         {
