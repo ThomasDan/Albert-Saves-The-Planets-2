@@ -8,6 +8,18 @@ namespace Albert_Saves_The_Planets_2.Controllers
 {
     public class PlanetsController : Controller
     {
+        public static Dictionary<int, string> planetReaderDictionary = new Dictionary<int, string>
+        {
+            {0, ""},
+            {1, ""},
+            {2, ""},
+            {3, ""},
+            {4, ""},
+            {5, ""},
+            {6, ""},
+            {7, ""},
+            {8, ""}
+        };
         public IActionResult PreStory()
         {
             return View();
@@ -51,6 +63,40 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult AfterStory()
         {
             return View();
+        }
+
+        public IActionResult WhereShouldIGo(int rfidReaderNumber, string planetID)
+        {
+            if (planetReaderDictionary[rfidReaderNumber].Equals(planetID))
+            {
+                switch (rfidReaderNumber)
+                {
+                    case 0:
+
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                }
+            }
         }
     }
 }
