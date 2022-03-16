@@ -1,3 +1,4 @@
+using Albert_Saves_The_Planets_2.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,8 @@ namespace Albert_Saves_The_Planets_2
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
 
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +57,9 @@ namespace Albert_Saves_The_Planets_2
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapHub<ChatHub>("/chatHub");
+
             });
         }
     }
