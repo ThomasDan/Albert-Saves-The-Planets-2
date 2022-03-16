@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
@@ -20,6 +22,20 @@ namespace Albert_Saves_The_Planets_2.Controllers
             {7, ""},
             {8, ""}
         };
+
+        internal LanguageModel AcquireLanguage()
+        {
+            LanguageModel language =
+                ll.GetApprovedLanguage(
+                    sessLang,
+                    langApproved,
+                    HttpContext.Request.Headers["Accept-Language"].ToString().Split(',')[0]
+                    );
+            HttpContext.Session.SetString("Language", language.Code);
+            HttpContext.Session.SetString("LanguageApproved", "true");
+
+            return language;
+        }
         public IActionResult PreStory()
         {
             return View();
