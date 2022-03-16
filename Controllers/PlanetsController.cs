@@ -34,7 +34,7 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult PreStory()
         {
             LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = GetAllPageContent(HttpContext.Session.GetString("Language"), "PreStory");
+            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "PreStory");
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
             return View(contents);
