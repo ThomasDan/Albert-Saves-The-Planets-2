@@ -13,7 +13,7 @@
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">That big dummy made me laugh harder than ever, I bet he's really angry. Let's get to work now.</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("MarsAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
@@ -21,8 +21,8 @@
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">I can't believe that Albert laughed at me, this is not funny at all.</div>
-            <div class="col-md-12 text-white text-center dialogtxtthre">The monster saw that one planet resembles the color of his sauce. Albert took the red planet back to it's orbit, meanwhile the monster took out his increasing anger on the other planets.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("MarsSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("MarsText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">

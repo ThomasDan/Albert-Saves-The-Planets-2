@@ -12,7 +12,7 @@
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">It's so cold and windy here, I have to be quick before I turn into a block of ice.</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("NeptuneAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
@@ -20,8 +20,8 @@
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Not a bad idea, I already have a cold.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">Neptune, the giant planet with winds that almost blew Albert away. He managed to avoid the heavy wind and placed the planet onto it's orbit.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("NeptuneSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("NeptuneText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">

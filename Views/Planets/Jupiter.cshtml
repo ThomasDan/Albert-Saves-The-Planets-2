@@ -13,7 +13,7 @@
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">My god this is a big planet, how am I going to move this?</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("JupitorAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
@@ -21,8 +21,8 @@
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Better not touch it little monkey, I had the same issue too.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">Jupiter was a tough one to work with, it's size shocked Albert but he managed to take the gas giant to it's place with a lot of effort and a few bananas for power.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("EarthSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("JupitorText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
