@@ -97,6 +97,7 @@ namespace Albert_Saves_The_Planets_2.Controllers
                         break;
                 }
             }
+            return RedirectToAction("Index", "Home");
         }
     }
 }
