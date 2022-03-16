@@ -9,60 +9,60 @@
     <title>@ViewData["Title"] - Albert_Saves_The_Planets_2</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body class="row">
-    <header style="position: absolute; z-index: 10; top: 0px; left: 10px;">
-        <nav>
-            <a asp-area="" asp-controller="Home" asp-action="Index">Index</a>
-            <a asp-area="" asp-controller="Planets" asp-action="PreStory">Intro</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Mercury">Mercury</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Venus">Venus</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Earth">Earth</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Mars">Mars</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Saturn">Saturn</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Uranus">Uranus</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Jupitor">Jupitor</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Neptune">Neptune</a>
-            <a asp-area="" asp-controller="Planets" asp-action="Pluto">Pluto</a>
-            <a asp-area="" asp-controller="Planets" asp-action="AfterStory">Outro</a>
-            @using (Html.BeginForm("SelectLanguage", "Home"))
-            {
-                <div class="row">
-                    @foreach (LanguageModel languageModel in Model.Languages)
-                    {
-                        <div>
-                            @if (languageModel.Code.Equals(Context.Session.GetString("Language")))
-                            {
-                                <button type="submit" disabled name="language" value="@languageModel.Code">
-                                    <img width="30" height="30" style="border-radius:15px; border:rgb(230 173 33) solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
-                                </button>
-                            }
-                            else
-                            {
-                                <button type="submit" name="language" value="@languageModel.Code">
-                                    <img width="30" height="30" style="border-radius:15px; border:black solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
-                                </button>
+    <body class="row">
+        <header style="position: absolute; z-index: 10; top: 0px; left: 10px;">
+            <nav>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Index</a>
+                <a asp-area="" asp-controller="Planets" asp-action="PreStory">Intro</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Mercury">Mercury</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Venus">Venus</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Earth">Earth</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Mars">Mars</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Saturn">Saturn</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Uranus">Uranus</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Jupiter">Jupiter</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Neptune">Neptune</a>
+                <a asp-area="" asp-controller="Planets" asp-action="Pluto">Pluto</a>
+                <a asp-area="" asp-controller="Planets" asp-action="AfterStory">Outro</a>
+                @using (Html.BeginForm("SelectLanguage", "Home"))
+                {
+                    <div class="row">
+                        @foreach (LanguageModel languageModel in Model.Languages)
+                        {
+                            <div>
+                                @if (languageModel.Code.Equals(Context.Session.GetString("Language")))
+                                {
+                                    <button type="submit" disabled name="language" value="@languageModel.Code">
+                                        <img width="30" height="30" style="border-radius:15px; border:rgb(230 173 33) solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" name="language" value="@languageModel.Code">
+                                        <img width="30" height="30" style="border-radius:15px; border:black solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
+                                    </button>
 
-                            }
-                        </div>
-                    }
-                </div>
-            }
-        </nav>
-    </header>
-    <main role="main" class="container-fluid">
-        @RenderBody()
-    </main>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </nav>
+        </header>
+        <main role="main" class="container-fluid">
+            @RenderBody()
+        </main>
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+    </html>
