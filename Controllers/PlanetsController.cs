@@ -4,12 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-
+using Microsoft.Extensions.Configuration;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
     public class PlanetsController : Controller
     {
+        private readonly IConfiguration configuration;
+
+        public PlanetsController(IConfiguration config)
+        {
+            configuration = config;
+        }
+
         public static Dictionary<int, string> planetReaderDictionary = new Dictionary<int, string>
         {
             {0, ""},
