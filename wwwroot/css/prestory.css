@@ -59,11 +59,11 @@ body {
     padding-top: 15px;
     user-select: none;
 }
-    #planet img {
-        max-height: 60vh;
-        min-height: 60vh;
-        user-select: none;
-    }
+#planet img {
+    max-height: 60vh;
+    min-height: 60vh;
+    user-select: none;
+}
 .magic {
     max-width: 120px;
     min-width: 120px;
@@ -196,11 +196,11 @@ body {
   opacity: 1;
 }
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    /*margin-left: -15px;*/
+    min-height: 100vh;
 }
 @keyframes float {
   0% {
@@ -225,6 +225,6 @@ body {
   }
 }
 
-img {
+#solsystem {
   width: 850px;
 }
