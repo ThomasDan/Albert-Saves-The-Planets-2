@@ -23,24 +23,14 @@ namespace Albert_Saves_The_Planets_2.Controllers
             {8, ""}
         };
 
-        internal LanguageModel AcquireLanguage()
-        {
-            LanguageLogic ll = new LanguageLogic(configuration);
-
-            LanguageModel language =
-                ll.GetApprovedLanguage(
-                    sessLang,
-                    langApproved,
-                    HttpContext.Request.Headers["Accept-Language"].ToString().Split(',')[0]
-                    );
-            HttpContext.Session.SetString("Language", language.Code);
-            HttpContext.Session.SetString("LanguageApproved", "true");
-
-            return language;
-        }
+        
         public IActionResult PreStory()
         {
-            return View();
+            LanguageLogic ll = new LanguageLogic(configuration);
+            List<ContentTextModel> pCM = GetAllPageContent(HttpContext.Session.GetString("Language"), "PreStory");
+            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            return View(contents);
         }
         public IActionResult Earth()
         {
