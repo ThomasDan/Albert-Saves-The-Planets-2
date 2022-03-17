@@ -1,0 +1,21 @@
+body {
+    overflow: hidden;
+    margin: 0px;
+}
+
+html body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.container {
+    position: relative;
+    min-width: 100vw;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}

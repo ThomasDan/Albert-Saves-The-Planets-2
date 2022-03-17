@@ -1,28 +1,29 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/jupitor.css" />
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="jupiter.png" alt="Jupiter" class="img-thumbnail">
+            <img src="../assets/images/jupiter.png" alt="Jupiter" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">My god this is a big planet, how am I going to move this?</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("JupitorAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Better not touch it little monkey, I had the same issue too.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">Jupiter was a tough one to work with, it's size shocked Albert but he managed to take the gas giant to it's place with a lot of effort and a few bananas for power.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("EarthSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("JupitorText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
@@ -32,4 +33,4 @@
         </div>
     </div>
 </div>
-<script src="jupiter.js"></script>
+<script src="../js/jupiter.js"></script>

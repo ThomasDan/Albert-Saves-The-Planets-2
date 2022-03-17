@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\images\" />
-    <Folder Include="wwwroot\assets\videos\" />
-    <Folder Include="wwwroot\assets\sounds\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 

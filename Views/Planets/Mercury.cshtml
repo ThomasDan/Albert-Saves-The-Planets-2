@@ -1,28 +1,29 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/mercury.css" />
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="merkury.png" alt="Mercury" class="img-thumbnail">
+            <img src="../assets/images/merkury.png" alt="Mercury" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Albert" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Albert" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">This was way easier than I thought it would be.</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("MercuryAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Don't get too used to it, there is more to come. I can guarantee that.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">Albert had almost no struggles with Mercury due to it's small size. But he has a lot to do before he can defeat the evil spaghetti monster.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("MercurySpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("MercuryText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
@@ -32,4 +33,4 @@
         </div>
     </div>
 </div>
-<script src="mercury.js"></script>
+<script src="../js/mercury.js"></script>

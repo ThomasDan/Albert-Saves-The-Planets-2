@@ -1,15 +1,16 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/pluto.css" />
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="pluto.png" alt="Pluto" class="img-thumbnail">
+            <img src="../assets/images/pluto.png" alt="Pluto" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Albert" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Albert" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
@@ -17,16 +18,16 @@
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Of course I did, but thanks to you it's all back again.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">The great unknown, Pluto gave Albert weird feelings since Albert didn't knew about Pluto being a planet in the solar system.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("PlutoSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("PlutoText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">Pluto is a small dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first and the largest object to be discovered in the kuiper belt. After Pluto was discovered in 1930, it was said to be the ninth planet from the Sun.</div>
         </div>
     </div>
 </div>
-<script src="pluto.js"></script>
+<script src="../js/pluto.js"></script>

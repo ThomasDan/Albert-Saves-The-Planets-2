@@ -1,30 +1,28 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/saturn.css" />
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="saturnus.png" alt="Saturn" class="img-thumbnail">
+            <img src="../assets/images/saturnus.png" alt="Saturn" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Albert" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Albert" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">Rings like in a jewellery shop, too bad these rings are too big for my fingers.</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("SaturnAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">They fit around the planet but thanks to me they aren't with it.</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">
-                Saturn was different from the others with it's rings being all around the place.
-                Albert took a deep breath and got to work on restoring the planet. Meanwhile the spaghetti monster was watching Albert and his actions.
-            </div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("SaturnSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("SaturnText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
@@ -34,4 +32,4 @@
         </div>
     </div>
 </div>
-<script src="saturn.js"></script>
+<script src="../js/saturn.js"></script>

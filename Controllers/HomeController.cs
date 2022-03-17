@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Albert_Saves_The_Planets_2.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
@@ -17,11 +19,15 @@ namespace Albert_Saves_The_Planets_2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration configuration;
+        private readonly IHubContext<ChatHub> _hubContext;
 
-        public HomeController(IConfiguration config, ILogger<HomeController> logger)
+
+        public HomeController(IConfiguration config, ILogger<HomeController> logger, IHubContext<ChatHub> hubContext)
         {
             configuration = config;
             _logger = logger;
+
+            _hubContext = hubContext;
         }
 
         public IActionResult Index()
@@ -31,8 +37,9 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
             LanguageLogic ll = new LanguageLogic(configuration);
 
-
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            var test = _hubContext.Clients.All.SendAsync("test");
 
             return View(contents);
         }
@@ -69,7 +76,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
         public IActionResult SelectLanguage(string language)
         {
             HttpContext.Session.SetString("Language", language);

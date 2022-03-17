@@ -1,9 +1,12 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
 @using Microsoft.AspNetCore.Http;
-@inject IHttpContextAccessor httpContextAccessor; 
+@inject IHttpContextAccessor httpContextAccessor;
 @{
     ViewData["Title"] = "Start!";
 }
+
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
 
 <div class="text-center">
     <h1 class="display-4">@Model.Contents.First(t => t.Name.Equals("MainTitle")).Text</h1>

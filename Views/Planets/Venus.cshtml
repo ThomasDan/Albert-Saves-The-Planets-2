@@ -1,28 +1,29 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/venus.css" />
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="venus.png" alt="Venus" class="img-thumbnail">
+            <img src="../assets/images/venus.png" alt="Venus" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Spagetti monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">You can't defeat me Albert I pushed all of these tiny planets off their orbits!</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("VenusSpag1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Albert" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Albert" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">Yes, I can and I will defeat you no matter how many planets I have to save!</div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">And with this, Albert took Venus and put it back to it's place, while the spaghetti monster escaped.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("VenusAlbert1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("VenusText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
@@ -32,4 +33,4 @@
         </div>
     </div>
 </div>
-<script src="venus.js"></script>
+<script src="../js/venus.js"></script>

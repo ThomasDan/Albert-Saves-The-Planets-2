@@ -1,28 +1,29 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+<link rel="stylesheet" href="../css/mars.css" />
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6" id="planet">
-            <img src="mars.png" alt="mars" class="img-thumbnail">
+            <img src="../assets/images/mars.png" alt="mars" class="img-thumbnail">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
             <div class="magic">
                 <div id="spagettimonster">
-                    <img src="Albert.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/Albert.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">That big dummy made me laugh harder than ever, I bet he's really angry. Let's get to work now.</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("MarsAlbert1")).Text</div>
             <br>
             <div class="magictwo">
                 <div id="spagettimonster">
-                    <img src="spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
+                    <img src="../assets/images/spaghettimonster.png" alt="Spagetti monster" id="imagesdilog">
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">I can't believe that Albert laughed at me, this is not funny at all.</div>
-            <div class="col-md-12 text-white text-center dialogtxtthre">The monster saw that one planet resembles the color of his sauce. Albert took the red planet back to it's orbit, meanwhile the monster took out his increasing anger on the other planets.</div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("MarsSpag1")).Text</div>
+            <div class="col-md-12 text-white text-center dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("MarsText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
@@ -32,4 +33,4 @@
         </div>
     </div>
 </div>
-<script src="mars.js"></script>
+<script src="../js/mars.js"></script>

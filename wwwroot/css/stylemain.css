@@ -1,0 +1,85 @@
+@import url('http://fonts.cdnfonts.com/css/blanka');
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+html body video {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.video-container {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-position: center;
+}
+
+.button_cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 225px;
+    padding: 40px;
+    padding-left: 55px;
+    font-size: 35px;
+    color: #15f4ee;
+    font-weight: 400;
+    border: 2px solid #15f4ee;
+    letter-spacing: 15px;
+    border-radius: 100px;
+    font-family: 'Blanka', sans-serif;
+    text-decoration: none;
+    user-select: none;
+}
+
+.button:hover {
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee, 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
+
+.audio_cont {
+    position: absolute;
+    top: 5%;
+    left: 97%;
+    transform: translate(-50%, -50%);
+}
+
+.audio {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 50px;
+    padding: 10px;
+    font-size: 10px;
+    color: #15f4ee;
+    font-weight: 400;
+    border: 2px solid #15f4ee;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 100px;
+    font-family: 'Blanka', sans-serif;
+    user-select: none;
+}
+
+.audio:hover {
+    box-shadow: 0 1px 10px 0 #15f4ee inset, 0 1px 10px 0 #15f4ee, 0 1px 10px 0 #15f4ee inset, 0 1px 10px 0 #15f4ee;
+    text-shadow: 0 0 3px #15f4ee, 0 0 3px #15f4ee;
+}
+
+* {
+    cursor: url('https://cdn.custom-cursor.com/db/5964/32/cute-banana-cursor.png'), auto;
+}
+
+button:hover {
+    cursor: url('https://cdn.custom-cursor.com/db/5963/32/cute-banana-pointer.png'), auto;
+}
