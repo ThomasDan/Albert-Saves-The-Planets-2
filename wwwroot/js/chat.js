@@ -19,9 +19,12 @@ connection.on("ReceiveMessage", function ( message) {
     let planetID = message.substring(1);
     let planet;
 
+
+    console.log(readerID + ": " + planetID + " / " + dictionary[readerID]);
+
     if (dictionary[readerID] == planetID) {
         // Correct Planet/Reader lineup detected!
-        switch (planetID) {
+        switch (readerID) {
             case 0:
                 planet = "Mars";
                 break;
