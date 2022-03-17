@@ -16,10 +16,7 @@
                 </div>
                 <div id="txtone" class="text-center">Spaghetti monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">
-                You may have defeated me Albert, but I will be back and I will be
-                stronger than ever.
-            </div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("OutroSpag1")).Text</div>
             <br />
             <div class="magictwo">
                 <div id="spagettimonster">
@@ -27,21 +24,11 @@
                 </div>
                 <div id="txttwo" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">
-                You may come back stronger, but I will be prepared for your arrival,
-                and I will defeat you again.
-            </div>
-            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">
-                And with this, the Spaghetti Monster disappeared into the cosmos.
-                <hr />
-                Albert successfully completed his mission and with this inscribed
-                himself in the history of our solar system.
-            </div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("OutroAlbert1")).Text</div>
+            <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("OutroText2")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
-            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                @Model.Contents.First(t => t.Name.Equals("OutroText")).Text
-            </div>
+            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">@Model.Contents.First(t => t.Name.Equals("OutroText")).Text</div>
         </div>
     </div>
 </div>

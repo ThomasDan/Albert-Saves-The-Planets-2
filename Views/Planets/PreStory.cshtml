@@ -8,11 +8,7 @@
             <img src="../assets/images/solarsystem.png" id="solsystem" alt="Solar system" class="img-thumbnail" />
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 text-center text-white pt-3">
-            <div class="col-md-12 text-white text-center mt-2 dialogtxtthre">
-                In the beginning, monkeys and the flying spaghetti monster lived in
-                peace, but one day the flying spaghetti monster pushed the planets
-                out of their orbits making a huge chaos.
-            </div>
+            <div class="col-md-12 text-white text-center mt-2 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("IntroText")).Text</div>
 
             <br />
 
@@ -22,7 +18,7 @@
                 </div>
                 <div id="txtone" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxttwo">Don't do that!</div>
+            <div class="text-center mt-2 dialogtxttwo">@Model.Contents.First(t => t.Name.Equals("AlbertDialog1")).Text</div>
             <br />
             <div class="magictwo">
                 <div id="spagettimonster">
@@ -32,9 +28,7 @@
                 </div>
                 <div id="txttwo" class="text-center">Spaghetti Monster</div>
             </div>
-            <div class="text-center mt-2 dialogtxt">
-                You can't stop me Albert!
-            </div>
+            <div class="text-center mt-2 dialogtxt">@Model.Contents.First(t => t.Name.Equals("SpagMonDialog1")).Text</div>
             <br />
             <div class="magicthree">
                 <div id="spagettimonster">
@@ -42,19 +36,11 @@
                 </div>
                 <div id="txtfour" class="text-center">Albert</div>
             </div>
-            <div class="text-center mt-2 dialogtxtfour">
-                The monster is planning on pushing the planets out from their
-                orbits, I need to stop him!
-            </div>
+            <div class="text-center mt-2 dialogtxtfour">@Model.Contents.First(t => t.Name.Equals("AlbertDialog2")).Text</div>
             <br />
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
-            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Albert the brave and fearless space monkey got the task of finding
-                the planets and putting them back to their original places. We would
-                like to invite you to this journey to help Albert find the planets
-                and put them back to their orbits.
-            </div>
+            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">@Model.Contents.First(t => t.Name.Equals("IntroFacts")).Text</div>
         </div>
     </div>
 </div>
