@@ -18,6 +18,7 @@ connection.on("ReceiveMessage", function ( message) {
     let readerID = parseInt(message.substring(0, 1));
     let planetID = message.substring(1);
     let planet;
+    console.log(readerID + ", " + planetID);
 
 
     console.log(readerID + ": " + planetID + " / " + dictionary[readerID]);
