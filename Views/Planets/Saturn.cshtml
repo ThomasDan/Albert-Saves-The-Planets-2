@@ -26,10 +26,11 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Saturn is the 6th sight to see, it’s a similar giant as Jupiter with it's beautiful rings. The second biggest of all, it’s in the same category of giant planets as Jupiter, Uranus and Neptune.
-                The only planet that is less dense than water itself.
+                @Model.Contents.First(t => t.Name.Equals("SaturnFacts")).Text
             </div>
         </div>
     </div>
 </div>
 <script src="../js/saturn.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

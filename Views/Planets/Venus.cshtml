@@ -27,10 +27,11 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Venus is the second planet in the Solar system. It’s almost as big and heavy as the Earth,
-                so it’s sometimes named the „twin of the Earth”. It’s orbit is very similar to a perfect circle, it’s the closest planet to the Earth.
+                @Model.Contents.First(t => t.Name.Equals("VenusFacts")).Text
             </div>
         </div>
     </div>
 </div>
 <script src="../js/venus.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

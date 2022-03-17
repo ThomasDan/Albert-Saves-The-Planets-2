@@ -26,8 +26,10 @@
             <div class="col-md-12 text-white text-center dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("EarthText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
-            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">Earth, our home, the 5th biggest planet in the Solar system. It’s considered the biggest rock planet, but it’s only a little bit bigger than Venus.</div>
+            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">@Model.Contents.First(t => t.Name.Equals("EarthFacts")).Text</div>
         </div>
     </div>
 </div>
 <script src="../js/earth.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

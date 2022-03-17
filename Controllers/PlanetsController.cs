@@ -8,16 +8,20 @@ using Microsoft.Extensions.Configuration;
 using Albert_Saves_The_Planets_2.Logic;
 using Albert_Saves_The_Planets_2.Models;
 using Albert_Saves_The_Planets_2.Models.ViewModels;
+using Microsoft.AspNetCore.SignalR;
+using Albert_Saves_The_Planets_2.Hubs;
 
 namespace Albert_Saves_The_Planets_2.Controllers
 {
     public class PlanetsController : Controller
     {
+        private readonly IHubContext<ChatHub> _hubContext;
         private readonly IConfiguration configuration;
 
-        public PlanetsController(IConfiguration config)
+        public PlanetsController(IConfiguration config, IHubContext<ChatHub> hubContext)
         {
             configuration = config;
+            _hubContext = hubContext;
         }
 
         public static Dictionary<int, string> planetReaderDictionary = new Dictionary<int, string>
@@ -85,7 +89,7 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult Jupiter()
         {
             LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Jupitor");
+            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Jupiter");
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
             return View(contents);
