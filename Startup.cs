@@ -30,7 +30,7 @@ namespace Albert_Saves_The_Planets_2
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
 
-            services.AddSignalR();
+            services.AddSignalR(x => x.KeepAliveInterval = TimeSpan.FromMinutes(20));
 
         }
 

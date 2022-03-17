@@ -15,9 +15,10 @@ var dictionary = {
 }
 
 connection.on("ReceiveMessage", function ( message) {
-    let readerID = message.substring(0, 1);
+    let readerID = parseInt(message.substring(0, 1));
     let planetID = message.substring(1);
     let planet;
+    console.log(readerID + ", " + planetID);
 
     if (dictionary[readerID] == planetID) {
         // Correct Planet/Reader lineup detected!
@@ -46,7 +47,7 @@ connection.on("ReceiveMessage", function ( message) {
             case 7:
                 planet = "Uranus";
                 break;
-            case 8:
+            default:
                 planet = "Saturn";
                 break;
 
