@@ -1,4 +1,10 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor httpContextAccessor;
+@{
+    httpContextAccessor.HttpContext.Session.SetString("GameEnded", "True");
+}
+
 <link rel="stylesheet" href="../css/afterstory.css" />
 
 

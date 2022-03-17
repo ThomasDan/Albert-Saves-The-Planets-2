@@ -18,6 +18,14 @@
 
 </head>
 <body class="row">
+    @if ((int)httpContextAccessor.HttpContext.Session.GetInt32("PlanetsSaved") >= 9 && httpContextAccessor.HttpContext.Session.GetString("GameEnded") == "True")
+    {
+        <div style="position: absolute; z-index: 10; bottom:25px; text-align:center;">
+            <a asp-area="" asp-controller="Planets" asp-action="AfterStory" class="btn" style="background-color: rgb(230 173 33); border: 2px outset rgb(230 173 33); padding: 5px; color: white;">
+                PRESS FOR VICTORY PAGE
+            </a>
+        </div>
+    }
     <header style="position: absolute; z-index: 10; top: 0px; left: 10px;">
         <nav>
             <a asp-area="" asp-controller="Home" asp-action="Index">ASTPII</a>
@@ -33,12 +41,7 @@
             <a asp-area="" asp-controller="Planets" asp-action="Neptune">Neptune</a>
             <a asp-area="" asp-controller="Planets" asp-action="Pluto">Pluto</a>
             -->
-            @if ((int)httpContextAccessor.HttpContext.Session.GetInt32("PlanetsSaved") >= 9)
-            {
-                <a asp-area="" asp-controller="Planets" asp-action="AfterStory">
-                    <button type="button" class="btn btn-success">PRESS FOR VICTORY</button>
-                </a>
-            }
+
 
             @using (Html.BeginForm("SelectLanguage", "Home"))
             {
