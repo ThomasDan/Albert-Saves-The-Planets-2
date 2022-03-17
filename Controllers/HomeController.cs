@@ -19,15 +19,13 @@ namespace Albert_Saves_The_Planets_2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration configuration;
-        private readonly IHubContext<ChatHub> _hubContext;
 
 
-        public HomeController(IConfiguration config, ILogger<HomeController> logger, IHubContext<ChatHub> hubContext)
+        public HomeController(IConfiguration config, ILogger<HomeController> logger)
         {
             configuration = config;
             _logger = logger;
 
-            _hubContext = hubContext;
         }
 
         public IActionResult Index()
@@ -39,7 +37,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
-            var test = _hubContext.Clients.All.SendAsync("test");
 
             return View(contents);
         }
