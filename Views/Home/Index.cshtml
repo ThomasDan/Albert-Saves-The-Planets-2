@@ -4,8 +4,8 @@
 @{
     ViewData["Title"] = "Start!";
     List<string> planetSessions = new List<string>()
-    { "EarthSaved", "MarsSaved", "MercurySaved", "VenusSaved", "JupiterSaved", "SaturnSaved", "UranusSaved", "PlutoSaved", "NeptuneSaved" };
-    foreach(string ps in planetSessions)
+        { "EarthSaved", "MarsSaved", "MercurySaved", "VenusSaved", "JupiterSaved", "SaturnSaved", "UranusSaved", "PlutoSaved", "NeptuneSaved" };
+    foreach (string ps in planetSessions)
     {
         httpContextAccessor.HttpContext.Session.SetString(ps, "False");
     }
@@ -13,9 +13,23 @@
 }
 
 
-
+<div class=" video-container ">
+    <video src="~/assets/videos/mainback 2.mp4" type="video/mp4 " autoplay loop muted></video>
+</div>
 <div class="text-center">
     <h1 class="display-4">@Model.Contents.First(t => t.Name.Equals("MainTitle")).Text</h1>
-    <!--<p>Model.Contents.First(t => t.Name.Equals("WelcomeText")).Text</p>-->
+    <div class="button_cont ">
+        <a class="button" id="myButton" asp-area="" asp-controller="Planets" asp-action="PreStory">Start</a>
+    </div>
+
+    <div class="audio_cont ">
+        <audio id="audio" autoplay loop>
+            <source src="~/assets/sounds/mainmusic.mp3" type="audio/mp3">
+        </audio>
+        <div class="audio " onclick="play() ">audio</div>
+    </div>
+
 </div>
+<script type="text/javascript " src="~/js/mainpage.js"></script>
+
 

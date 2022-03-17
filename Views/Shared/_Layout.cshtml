@@ -20,7 +20,8 @@
 <body class="row">
     <header style="position: absolute; z-index: 10; top: 0px; left: 10px;">
         <nav>
-            <a asp-area="" asp-controller="Home" asp-action="Index">Index</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">ASTPII</a>
+            <!--
             <a asp-area="" asp-controller="Planets" asp-action="PreStory">Intro</a>
             <a asp-area="" asp-controller="Planets" asp-action="Mercury">Mercury</a>
             <a asp-area="" asp-controller="Planets" asp-action="Venus">Venus</a>
@@ -31,35 +32,36 @@
             <a asp-area="" asp-controller="Planets" asp-action="Jupiter">Jupiter</a>
             <a asp-area="" asp-controller="Planets" asp-action="Neptune">Neptune</a>
             <a asp-area="" asp-controller="Planets" asp-action="Pluto">Pluto</a>
+            -->
             @if ((int)httpContextAccessor.HttpContext.Session.GetInt32("PlanetsSaved") >= 9)
             {
                 <a asp-area="" asp-controller="Planets" asp-action="AfterStory">
-                    <button type="button">VICTORY</button>
+                    <button type="button" class="btn btn-success">PRESS FOR VICTORY</button>
                 </a>
             }
 
-                @using (Html.BeginForm("SelectLanguage", "Home"))
-                {
-                    <div class="row">
-                        @foreach (LanguageModel languageModel in Model.Languages)
-                        {
-                            <div>
-                                @if (languageModel.Code.Equals(Context.Session.GetString("Language")))
-                                {
-                                    <button type="submit" disabled name="language" value="@languageModel.Code">
-                                        <img width="30" height="30" style="border-radius:15px; border:rgb(230 173 33) solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
-                                    </button>
-                                }
-                                else
-                                {
-                                    <button type="submit" name="language" value="@languageModel.Code">
-                                        <img width="30" height="30" style="border-radius:15px; border:black solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
-                                    </button>
-                                }
-                            </div>
-                        }
-                    </div>
-                }
+            @using (Html.BeginForm("SelectLanguage", "Home"))
+            {
+                <div class="row">
+                    @foreach (LanguageModel languageModel in Model.Languages)
+                    {
+                        <div>
+                            @if (languageModel.Code.Equals(Context.Session.GetString("Language")))
+                            {
+                                <button type="submit" disabled name="language" value="@languageModel.Code">
+                                    <img width="30" height="30" style="border-radius:15px; border:rgb(230 173 33) solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="submit" name="language" value="@languageModel.Code">
+                                    <img width="30" height="30" style="border-radius:15px; border:black solid 3px;" src="../assets/images/@languageModel.GetFileName()" />
+                                </button>
+                            }
+                        </div>
+                    }
+                </div>
+            }
         </nav>
     </header>
     <main role="main" class="container-fluid">

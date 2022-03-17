@@ -1,9 +1,11 @@
 var vid = document.getElementById("video");
 vid.playbackRate = 1;
 
+/*
 document.getElementById("myButton").onclick = function() {
     location.href = "../prestory/prestory.html";
 }
+*/
 
 var nem = false;
 

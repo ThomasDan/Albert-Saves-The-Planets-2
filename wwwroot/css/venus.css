@@ -40,7 +40,7 @@
     display: none;
   }
 body {
-    background-image: url('spacemonke.gif');
+    background-image: url('../assets/images/spacemonke.gif');
     background-position: center;
     background-size: cover;
     /*position: relative;*/
