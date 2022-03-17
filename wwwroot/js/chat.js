@@ -44,7 +44,7 @@ connection.on("ReceiveMessage", function ( message) {
             case 7:
                 planet = "Uranus";
                 break;
-            default:
+            case 8:
                 planet = "Saturn";
                 break;
             default:
