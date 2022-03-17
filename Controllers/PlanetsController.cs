@@ -44,8 +44,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
             List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Intro");
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
-            var test = _hubContext.Clients.All.SendAsync("BENGIS");
-
             return View(contents);
         }
         public IActionResult Earth()

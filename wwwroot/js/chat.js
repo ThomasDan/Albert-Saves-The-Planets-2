@@ -13,9 +13,9 @@ connection.on("ReceiveMessage", function ( message) {
     // should be aware of possible script injection concerns.
     //li.textContent = ` says ${temp}`;
 
-    console.log("Script Engaged!");
+    console.log("Script Engaged! " + message);
 
-    let temp = "https://localhost:32258/Planets/" + "Earth"; //message
+    let temp = "http://localhost:32258/Planets/" + "Earth"; //message
     location.href = temp;
 });
 
