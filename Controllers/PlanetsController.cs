@@ -23,94 +23,56 @@ namespace Albert_Saves_The_Planets_2.Controllers
             configuration = config;
             _hubContext = hubContext;
         }
+
+        private PageContentsViewModel GetPageContents(string page)
+        {
+            LanguageLogic ll = new LanguageLogic(configuration);
+            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), page);
+            return new PageContentsViewModel(ll.GetLanguages(), pCM);
+        }
         
         public IActionResult PreStory()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Intro");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Intro"));
         }
         public IActionResult Earth()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Earth");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Earth"));
         }
         public IActionResult Mars()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Mars");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Mars"));
         }
         public IActionResult Venus()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Venus");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Venus"));
         }
         public IActionResult Mercury()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Mercury");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Mercury"));
         }
         public IActionResult Saturn()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Saturn");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Saturn"));
         }
         public IActionResult Jupiter()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Jupiter");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Jupiter"));
         }
         public IActionResult Pluto()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Pluto");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Pluto"));
         }
         public IActionResult Uranus()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Uranus");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+            return View(GetPageContents("Uranus"));
 
-            return View(contents);
         }
         public IActionResult Neptune()
-        {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Neptune");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
-        }
+        {            return View(GetPageContents("Neptune"));        }
         public IActionResult AfterStory()
         {
-            LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Outro");
-            PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
-
-            return View(contents);
+            return View(GetPageContents("Outro"));
         }
     }
 }
