@@ -26,7 +26,7 @@
             <div class="col-md-12 text-white text-center mt-5 dialogtxtthre">@Model.Contents.First(t => t.Name.Equals("PlutoText")).Text</div>
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
-            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">Pluto is a small dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first and the largest object to be discovered in the kuiper belt. After Pluto was discovered in 1930, it was said to be the ninth planet from the Sun.</div>
+            <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">@Model.Contents.First(t => t.Name.Equals("PlutoFacts")).Text</div>
         </div>
     </div>
 </div>

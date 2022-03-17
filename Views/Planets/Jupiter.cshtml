@@ -27,8 +27,7 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Jupiter is our 5th stop, it’s the biggest of all the planets in the Solar system.
-                It’s weight doesn't really matter because the Sun will always be the heaviest. But compared to the other planets, it's very heavy.
+                @Model.Contents.First(t => t.Name.Equals("JupiterFacts")).Text
             </div>
         </div>
     </div>

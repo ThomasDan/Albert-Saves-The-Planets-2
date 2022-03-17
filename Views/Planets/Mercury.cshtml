@@ -27,8 +27,7 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Mercury is the closest planet to the Sun. Since the Pluto is a dwarf planet, it’s the smallest planet,
-                it’s even smaller than Earth. Because of that, some Moons orbiting giant planets are bigger than Mercury itself. It’s not as heavy as our home, the Earth.
+                @Model.Contents.First(t => t.Name.Equals("MercuryFacts")).Text
             </div>
         </div>
     </div>

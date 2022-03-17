@@ -27,8 +27,7 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Mars is the 4th planet on the list, this one is the red planet everyone likes to talk about when it comes to life on other planets.
-                It’s only half the size of the Earth and it's super light. The whole surface of Mars is smaller than all the land on Earth combined.
+                @Model.Contents.First(t => t.Name.Equals("MarsFacts")).Text
             </div>
         </div>
     </div>

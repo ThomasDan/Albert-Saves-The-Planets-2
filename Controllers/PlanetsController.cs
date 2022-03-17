@@ -85,7 +85,7 @@ namespace Albert_Saves_The_Planets_2.Controllers
         public IActionResult Jupiter()
         {
             LanguageLogic ll = new LanguageLogic(configuration);
-            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Jupitor");
+            List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), "Jupiter");
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
             return View(contents);

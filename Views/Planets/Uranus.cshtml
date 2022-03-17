@@ -27,8 +27,7 @@
         </div>
         <div class="col-md-12 col-lg-12 text-center text-white factscontainer">
             <div class="col-md-12 col-lg-12 text-center text-white pt-3 facts">
-                Uranus is the 7th space sphere, the 3rd widest of the so called "gas giants", but it's the lightest.
-                It doesn’t fit in the category of Saturn and Jupiter, it is different from the 2 giants since it has more in common with Neptune. It has a small rock core in the middle.
+                @Model.Contents.First(t => t.Name.Equals("UranusFacts")).Text
             </div>
         </div>
     </div>
