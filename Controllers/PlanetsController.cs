@@ -23,20 +23,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
             configuration = config;
             _hubContext = hubContext;
         }
-
-        public static Dictionary<int, string> planetReaderDictionary = new Dictionary<int, string>
-        {
-            {0, ""},
-            {1, ""},
-            {2, ""},
-            {3, ""},
-            {4, ""},
-            {5, ""},
-            {6, ""},
-            {7, ""},
-            {8, ""}
-        };
-
         
         public IActionResult PreStory()
         {
@@ -125,41 +111,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
 
             return View(contents);
-        }
-
-        public IActionResult WhereShouldIGo(int rfidReaderNumber, string planetID)
-        {
-            if (planetReaderDictionary[rfidReaderNumber].Equals(planetID))
-            {
-                switch (rfidReaderNumber)
-                {
-                    case 0:
-
-                        break;
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                    case 5:
-
-                        break;
-                    case 6:
-
-                        break;
-                    case 7:
-
-                        break;
-                }
-            }
-            return RedirectToAction("Index", "Home");
         }
     }
 }

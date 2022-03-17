@@ -3,6 +3,13 @@
 @inject IHttpContextAccessor httpContextAccessor;
 @{
     ViewData["Title"] = "Start!";
+    List<string> planetSessions = new List<string>()
+    { "EarthSaved", "MarsSaved", "MercurySaved", "VenusSaved", "JupiterSaved", "SaturnSaved", "UranusSaved", "PlutoSaved", "NeptuneSaved" };
+    foreach(string ps in planetSessions)
+    {
+        httpContextAccessor.HttpContext.Session.SetString(ps, "False");
+    }
+    httpContextAccessor.HttpContext.Session.SetInt32("PlanetsSaved", 0);
 }
 
 
