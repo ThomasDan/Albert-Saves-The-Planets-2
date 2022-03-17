@@ -37,8 +37,9 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
             LanguageLogic ll = new LanguageLogic(configuration);
 
-
             PageContentsViewModel contents = new PageContentsViewModel(ll.GetLanguages(), pCM);
+
+            var test = _hubContext.Clients.All.SendAsync("test");
 
             return View(contents);
         }
@@ -75,7 +76,6 @@ namespace Albert_Saves_The_Planets_2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
         public IActionResult SelectLanguage(string language)
         {
             HttpContext.Session.SetString("Language", language);
