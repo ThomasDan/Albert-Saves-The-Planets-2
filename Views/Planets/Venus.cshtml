@@ -4,11 +4,13 @@
 @inject IHttpContextAccessor httpContextAccessor;
 
 @{
+    ViewData["Title"] = "Venus!";
+
     string planetSaved = httpContextAccessor.HttpContext.Session.GetString("VenusSaved");
     if (planetSaved == null || planetSaved != "True")
     {
         int i = (int)httpContextAccessor.HttpContext.Session.GetInt32("PlanetsSaved");
-        httpContextAccessor.HttpContext.Session.SetInt32("PlanetsSaved", i + 1);
+        httpContextAccessor.HttpContext.Session.SetInt32("PlanetsSaved", i++);
         httpContextAccessor.HttpContext.Session.SetString("VenusSaved", "True");
     }
 }

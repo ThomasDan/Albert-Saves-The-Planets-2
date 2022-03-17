@@ -2,6 +2,8 @@
 @using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor httpContextAccessor;
 @{
+    ViewData["Title"] = "The End!";
+
     httpContextAccessor.HttpContext.Session.SetString("GameEnded", "True");
 }
 

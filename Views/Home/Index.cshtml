@@ -3,6 +3,8 @@
 @inject IHttpContextAccessor httpContextAccessor;
 @{
     ViewData["Title"] = "Start!";
+    // Initialization of Session Values
+
     List<string> planetSessions = new List<string>()
         { "EarthSaved", "MarsSaved", "MercurySaved", "VenusSaved", "JupiterSaved", "SaturnSaved", "UranusSaved", "PlutoSaved", "NeptuneSaved" };
     foreach (string ps in planetSessions)

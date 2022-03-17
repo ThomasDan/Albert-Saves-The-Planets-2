@@ -4,6 +4,9 @@
 @inject IHttpContextAccessor httpContextAccessor;
 
 @{
+    ViewData["Title"] = "Holy Mars!";
+
+
     string planetSaved = httpContextAccessor.HttpContext.Session.GetString("MarsSaved");
     if (planetSaved == null || planetSaved != "True")
     {
