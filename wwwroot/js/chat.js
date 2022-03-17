@@ -2,21 +2,60 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-//Disable send button until connection is established
-//document.getElementById("sendButton").disabled = true;
+var dictionary = {
+    0: "121164164110", // Mars
+    1: "897121989", // Neptune
+    2: "16916921689", // Juppiter
+    3: "1034590137", // Earth
+    4: "16317989137", // pluto
+    5: "2021353134", // Mercury
+    6: "16914689137", // venus
+    7: "5716120143", // Uranus
+    8: "9717780195" // Sayt'urn
+}
 
 connection.on("ReceiveMessage", function ( message) {
-    //var li = document.createElement("li");
-    //document.getElementById("messagesList").appendChild(li);
-    // We can assign user-supplied strings to an element's textContent because it
-    // is not interpreted as markup. If you're assigning in any other way, you 
-    // should be aware of possible script injection concerns.
-    //li.textContent = ` says ${temp}`;
+    let readerID = message.substring(0, 1);
+    let planetID = message.substring(1);
+    let planet;
 
-    console.log("Script Engaged! " + message);
+    if (dictionary[readerID] == planetID) {
+        // Correct Planet/Reader lineup detected!
+        switch (planetID) {
+            case 0:
+                planet = "Mars";
+                break;
+            case 1:
+                planet = "Neptune";
+                break;
+            case 2:
+                planet = "Jupiter";
+                break;
+            case 3:
+                planet = "Earth";
+                break;
+            case 4:
+                planet = "Pluto";
+                break;
+            case 5:
+                planet = "Mercury";
+                break;
+            case 6:
+                planet = "Venus";
+                break;
+            case 7:
+                planet = "Uranus";
+                break;
+            case 8:
+                planet = "Saturn";
+                break;
 
-    let temp = "http://localhost:32258/Planets/" + "Earth"; //message
-    location.href = temp;
+        }
+        let temp = "http://localhost:32258/Planets/" + planet; //message
+        location.href = temp;
+    }
+
+    
 });
 
 connection.start().then(function () {

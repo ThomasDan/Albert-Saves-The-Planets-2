@@ -1,4 +1,18 @@
 ﻿@model Albert_Saves_The_Planets_2.Models.ViewModels.PageContentsViewModel
+@using Microsoft.AspNetCore.Http;
+
+@inject IHttpContextAccessor httpContextAccessor;
+
+@{ 
+    string planetSaved = httpContextAccessor.HttpContext.Session.GetString("EarthSaved");
+    if (planetSaved == null || planetSaved != "True")
+    {
+        int i = (int)httpContextAccessor.HttpContext.Session.GetInt32("PlanetsSaved");
+        httpContextAccessor.HttpContext.Session.SetInt32("PlanetsSaved", i + 1);
+        httpContextAccessor.HttpContext.Session.SetString("EarthSaved", "True");
+    }
+}
+
 <link rel="stylesheet" href="../css/earth.css" />
 
 
