@@ -15,7 +15,7 @@ var dictionary = {
 }
 
 connection.on("ReceiveMessage", function ( message) {
-    let readerID = message.substring(0, 1);
+    let readerID = parseInt(message.substring(0, 1));
     let planetID = message.substring(1);
     let planet;
 
@@ -30,9 +30,6 @@ connection.on("ReceiveMessage", function ( message) {
                 break;
             case 2:
                 planet = "Jupiter";
-                break;
-            case 3:
-                planet = "Earth";
                 break;
             case 4:
                 planet = "Pluto";
@@ -49,7 +46,9 @@ connection.on("ReceiveMessage", function ( message) {
             case 8:
                 planet = "Saturn";
                 break;
-
+            default:
+                planet = "Earth";
+                break;
         }
         let temp = "http://localhost:32258/Planets/" + planet; //message
         location.href = temp;
