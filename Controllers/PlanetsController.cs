@@ -26,6 +26,10 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
         private PageContentsViewModel GetPageContents(string page)
         {
+            // this isn't required directly, but it maintains the signalR client connection.
+            _hubContext.Clients.All.SendAsync("pls no die :)");
+
+
             LanguageLogic ll = new LanguageLogic(configuration);
             List<ContentTextModel> pCM = ll.GetTranslationsForPage(HttpContext.Session.GetString("Language"), page);
             return new PageContentsViewModel(ll.GetLanguages(), pCM);
