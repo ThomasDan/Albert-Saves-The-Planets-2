@@ -4,7 +4,7 @@ body {
     overflow: hidden;
 }
 
-html body video {
+#indexBackgroundVideo {
     min-height: 100vh;
     min-width: 100vw;
 }

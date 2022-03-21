@@ -6,10 +6,10 @@
 
     // Initialization of Session Values
     List<string> planetSessions = new List<string>()
-    { 
-        "EarthSaved", "MarsSaved", "MercurySaved", 
-        "VenusSaved", "JupiterSaved", "SaturnSaved", 
-        "UranusSaved", "PlutoSaved", "NeptuneSaved" 
+{
+        "EarthSaved", "MarsSaved", "MercurySaved",
+        "VenusSaved", "JupiterSaved", "SaturnSaved",
+        "UranusSaved", "PlutoSaved", "NeptuneSaved"
     };
     foreach (string ps in planetSessions)
     {
@@ -19,9 +19,9 @@
     httpContextAccessor.HttpContext.Session.SetString("GameEnded", "False");
 }
 
-<style src="~/css/stylemain.css"></style>
+<link href="~/css/stylemain.css" rel="stylesheet" />
 <div class=" video-container ">
-    <video src="~/assets/videos/mainback 2.mp4" type="video/mp4 " autoplay loop muted></video>
+    <video id="indexBackgroundVideo" src="~/assets/videos/mainback 2.mp4" type="video/mp4 " autoplay loop muted></video>
 </div>
 <div class="text-center">
     <h1 class="display-4">@Model.Contents.First(t => t.Name.Equals("MainTitle")).Text</h1>

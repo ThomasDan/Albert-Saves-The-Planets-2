@@ -1,4 +1,4 @@
-var vid = document.getElementById("video");
+var vid = document.getElementById("indexBackgroundVideo");
 vid.playbackRate = 1;
 
 /*
