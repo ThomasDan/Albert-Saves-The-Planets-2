@@ -73,7 +73,9 @@ namespace Albert_Saves_The_Planets_2.Controllers
 
         }
         public IActionResult Neptune()
-        {            return View(GetPageContents("Neptune"));        }
+        {
+            return View(GetPageContents("Neptune"));
+        }
         public IActionResult AfterStory()
         {
             return View(GetPageContents("Outro"));
